@@ -1,5 +1,5 @@
-const ALL_GAME_URL = `https://cs-steam-game-api.herokuapp.com/games?limit=30`;
-const GENRES_URL = `https://cs-steam-game-api.herokuapp.com/genres?page=3`;
+const ALL_GAME_URL = `https://steam-api-dot-cs-platform-306304.et.r.appspot.com/games?limit=30`;
+const GENRES_URL = `https://steam-api-dot-cs-platform-306304.et.r.appspot.com/genres?page=3`;
 
 
 const searchBtn = document.querySelector("#search-button");
@@ -90,7 +90,7 @@ async function searchGameByAppName() {
             header.textContent = searchInput;
         }
 
-        const APPNAME_URL = `https://cs-steam-game-api.herokuapp.com/games?q=${searchInput}`;
+        const APPNAME_URL = `https://steam-api-dot-cs-platform-306304.et.r.appspot.com?q=${searchInput}`;
         const response = await fetch(`${APPNAME_URL}`);
         const data = response.json();
         return data;
@@ -143,7 +143,7 @@ searchBtn.addEventListener(`click`, renderSearchGame);
        }
         
         
-        const GENRE_SG_URL = (`https://cs-steam-game-api.herokuapp.com/games?genres=${queryString}&limit=30`);
+        const GENRE_SG_URL = (`https://steam-api-dot-cs-platform-306304.et.r.appspot.com/games?genres=${queryString}&limit=30`);
         const res = await fetch(`${GENRE_SG_URL}`);
         const data = await res.json();
         console.log(data);
@@ -194,7 +194,7 @@ searchBtn.addEventListener(`click`, renderSearchGame);
            if(value !== 0) {
             queryString = value;
             console.log(queryString);
-            const SINGLE_GAME_URL = (`https://cs-steam-game-api.herokuapp.com/games?appid=${queryString}`);
+            const SINGLE_GAME_URL = (`https://steam-api-dot-cs-platform-306304.et.r.appspot.com/games?appid=${queryString}`);
             console.log(SINGLE_GAME_URL);
             const res = await fetch(`${SINGLE_GAME_URL}`);
             const data = await res.json();
